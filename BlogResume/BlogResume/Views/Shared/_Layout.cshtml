@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="~/css/common.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>@ViewData["Title"] - BlogResume</title>
+</head>
+<body>
+
+    <!--Header Menu-->
+    <header class="header container-fluid">
+        <nav id="nav" class="nav">
+            <ul class="nav__list">
+                <li class="nav__item logo">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">
+                        <img class="img" src="~/images/logo.webp">
+                    </a>
+                </li>
+                <li class="nav__item nav-effect"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                <li class="nav__item nav-effect"><a asp-area="" asp-controller="Home" asp-action="Work">Work</a></li>
+                <li class="nav__item nav-effect"><a asp-area="" asp-controller="Home" asp-action="Blog">Blog</a></li>
+                <li class="nav__item nav-effect"><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                <li class="nav__item last-button">
+                    <button class="talk-button">Let's talk</button>
+                </li>
+                <li class="nav__item toggle-button">
+                    <a id="toggle-button">
+                        <span class="toggle-line"></span>
+                        <span class="toggle-line"></span>
+                        <span class="toggle-line"></span>
+                    </a>
+                </li>
+            </ul>
+            <div id="sticky-nav" class="sticky-nav">
+                <ul class="sticky-nav__list">
+                    <li class="sticky-nav__item"><a class="sticky-link inactive">Home</a></li>
+                    <li class="sticky-nav__item"><a class="sticky-link" href="~/work.html">Work</a></li>
+                    <li class="sticky-nav__item"><a class="sticky-link" href="~/blog.html">Blog</a></li>
+                    <li class="sticky-nav__item"><a class="sticky-link" href="~/contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!--End Header Menu-->
+
+
+    <!--Body-->
+    @RenderBody()
+    <!--End Body-->
+
+
+    <!--Footer-->
+    <footer>
+        <div class="footer-wrapper">
+            <div class="box-cover">
+                <div class="footer-top">
+                    <div class="footer-logo">
+                        <img class="img" src="~/images/logo2_footer.webp">
+                    </div>
+                    <div class="footer-content">
+                        <div class="box-col-5">
+                            <p>
+                                In the mean time shall soon find out the cause of this: What was the epicurus towards
+                                their
+                                children.
+                            </p>
+                        </div>
+                        <div class="box-col-5">
+                            <a class="call-button">Call me</a>
+                            <a class="contact-button">Contact</a>
+                        </div>
+                    </div>
+                    <div class="footer-social-group">
+                        <a class="social-icon"><i class="fa fa-twitter"></i></a>
+                        <a class="social-icon"><i class="fa fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>
+                        Copyright © 2021 All rights reserved | This website is made with
+                        <span class="highlight fa fa-heart"></span>
+                        by <span class="highlight">Hua Hoang Thanh Bao</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--End Footer-->
+
+
+    <!--Backtop button-->
+    <div id="back-top-button" class="back-top">
+        <a>
+            <i class="back-top-icon fa fa-level-up"></i>
+        </a>
+    </div>
+    <!--End Backtop button-->
+
+
+    <script src="~/js/menu.js"></script>
+
+
+    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)*@
+</body>
+</html>
