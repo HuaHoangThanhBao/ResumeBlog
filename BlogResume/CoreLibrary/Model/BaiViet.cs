@@ -20,11 +20,15 @@ namespace CoreLibrary.Model
         public int ChuDeID { get; set; }
         public ChuDe ChuDe { get; set; }
 
-        [Required(ErrorMessage = "Ten bai viet is required")]
-        [StringLength(50, ErrorMessage = "Ten user can't be longer than 50 characters")]
-        public string TenBaiViet { get; set; }
+        [Required(ErrorMessage = "Tieu de is required")]
+        [StringLength(50, ErrorMessage = "Tieu de can't be longer than 50 characters")]
+        public string TieuDe { get; set; }
 
-        [DefaultValue(false)]
+        [Required(ErrorMessage = "Mo ta is required")]
+        [StringLength(25, ErrorMessage = "Mo ta can't be longer than 25 characters")]
+        public string MoTa { get; set; }
+
+        [Required(ErrorMessage = "Noi dung is required")]
         public string NoiDung { get; set; }
 
         [Required(ErrorMessage = "Ngay dang is required")]

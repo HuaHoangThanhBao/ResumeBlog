@@ -33,13 +33,19 @@ namespace CoreLibrary.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("MoTa")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(25)")
+                        .HasMaxLength(25);
+
                     b.Property<DateTime>("NgayDang")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("NoiDung")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("TenBaiViet")
+                    b.Property<string>("TieuDe")
                         .IsRequired()
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);

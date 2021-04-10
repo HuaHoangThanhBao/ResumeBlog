@@ -20,8 +20,16 @@ namespace Repository
         {
             return await FindAll()
                 .Where(ow => !ow.TinhTrang)
-                .OrderBy(ow => ow.TenBaiViet)
+                .Include(ow => ow.ChuDe)
+                .OrderBy(ow => ow.TieuDe)
                 .ToListAsync();
+        }
+
+        public async Task<BaiViet> GetBaiVietByIdAsync(int baiVietID)
+        {
+            return await FindByCondition(baiViet => baiViet.BaiVietID.Equals(baiVietID))
+                .Include(cd => cd.ChuDe)
+                .FirstOrDefaultAsync();
         }
     }
 }

@@ -7,5 +7,6 @@ namespace DataAccessLayer
     public interface IBaiVietRepository
     {
         Task<IEnumerable<BaiViet>> GetAllBaiVietsAsync();
+        Task<BaiViet> GetBaiVietByIdAsync(int baiVietID);
     }
 }

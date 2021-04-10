@@ -1,0 +1,56 @@
+﻿@using System.Web;
+
+<link rel="stylesheet" href="~/css/blog.css">
+<link rel="stylesheet" href="~/css/blog-detail.css">
+
+<!--Main Container-->
+<main id="main">
+    <div class="container-fluid">
+        <div class="banner-container">
+            <div class="banner-wrapper">
+                <div class="banner-box">
+                    <h1 class="pad-top-20 c-white">
+                        @ViewBag.BaiViet.TieuDe
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container container-fluid">
+        <div class="container-wrapper">
+            <section class="box-container">
+                <div class="box-cover">
+                    <div class="box-wrapper">
+                        <div class="box-col-7">
+                            <div class="post-container">
+                                <div class="post-header">
+                                    <img class="img" src="~/images/single_blog_1.png">
+                                </div>
+                                <div class="post-content">
+                                    <i class="post-icon fa fa-list-alt">
+                                        <span class="post-icon-txt">
+                                            @ViewBag.BaiViet.ChuDe.TenChuDe
+                                        </span>
+                                    </i>
+                                    <div class="content">
+                                        @Html.Raw(HttpUtility.HtmlDecode((string)ViewBag.BaiViet.NoiDung))
+                                    </div>
+                                </div>
+                            </div>
+
+                            @Html.Partial("_MessageForm")
+
+                        </div>
+                        <div class="box-col-3">
+
+                            @Html.Partial("_SideBar")
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+<!--End Main Container-->

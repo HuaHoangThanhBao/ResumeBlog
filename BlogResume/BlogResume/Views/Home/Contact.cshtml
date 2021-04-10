@@ -48,28 +48,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="message-container">
-                            <h3>Get In Touch</h3>
-                            <form>
-                                <div class="message-form">
-                                    <textarea class="message" placeholder="Enter message"></textarea>
-                                    <div class="message-row">
-                                        <div class="box-col-5">
-                                            <input class="name" placeholder="Enter your name">
-                                        </div>
-                                        <div class="box-col-5">
-                                            <input class="email" placeholder="Email">
-                                        </div>
-                                    </div>
-                                    <div class="message-row">
-                                        <input class="subject" placeholder="Enter your subject">
-                                    </div>
-                                    <div class="message-row">
-                                        <button class="send-button">SEND</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                        
+                        @Html.Partial("_MessageForm")
                     </div>
                 </div>
             </section>

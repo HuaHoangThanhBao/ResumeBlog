@@ -1,0 +1,77 @@
+﻿<!--Search Box-->
+<div class="sidebar-block">
+    <div class="block-header">
+        <h3>Search</h3>
+    </div>
+    <div class="block-body">
+        <div class="search-box">
+            <input class="search-inp" placeholder="Search Keyword">
+            <i class="search-icon fa fa-search"></i>
+        </div>
+    </div>
+</div>
+<!--End Search Box-->
+<!--Recent Post-->
+<div class="sidebar-block">
+    <div class="block-header">
+        <h3>Recent Posts</h3>
+    </div>
+    <div class="block-body">
+        <ul class="block-list">
+            @{
+                int count = 0;
+
+                foreach (var baiViet in ViewBag.BaiViets)
+                {
+                    if (count != 5)
+                    {
+                        <li class="block-item">
+                            <a>
+                                <div class="block-box">
+                                    <div class="block-image">
+                                        <img class="img" src="~/images/post_1.png">
+                                    </div>
+                                    <div class="block-content">
+                                        <div class="block-content-cover">
+                                        <a asp-area="" asp-controller="Home" asp-action="BlogDetail" asp-route-id="@baiViet.BaiVietID">
+                                            <h4 class="block-heading">@baiViet.TieuDe</h4>
+                                        </a>
+                                            <p class="block-txt">@baiViet.NgayDang.ToShortDateString()</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        count++;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+            }
+        </ul>
+    </div>
+</div>
+<!--End Recent Post-->
+<!--Tags Box-->
+<div class="sidebar-block">
+    <div class="block-header">
+        <h3>Tags</h3>
+    </div>
+    <div class="block-body">
+        <div class="tag-box">
+            <ul class="tag-list">
+                @foreach (var chuDe in ViewBag.ChuDes)
+                {
+                    <li class="tag-item">
+                        <a class="tag-link">
+                            @chuDe.TenChuDe
+                        </a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+<!--End Tags Box-->

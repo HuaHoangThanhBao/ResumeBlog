@@ -1,6 +1,8 @@
-﻿
-<link rel="stylesheet" href="~/css/blog.css">
+﻿@using X.PagedList.Mvc.Core;
+@using X.PagedList;
+@using X.PagedList.Mvc.Core.Common;
 
+<link rel="stylesheet" href="~/css/blog.css">
 
 <!--Main Container-->
 <main id="main">
@@ -20,7 +22,6 @@
 </main>
 <!--End Main Container-->
 
-
 <div class="main-container container-fluid">
     <div class="container-wrapper">
         <section class="box-container">
@@ -29,266 +30,42 @@
                     <div class="box-col-7">
                         <div class="post-container">
                             <ul class="post-list">
+
+                                @foreach (var baiViet in ViewBag.BaiVietToPage)
+                                {
                                 <li class="post-item">
                                     <div class="post-header">
                                         <img class="img" src="~/images/single_blog_1.png">
                                         <div class="post-time">
-                                            <p>15</p>
+                                            <p>@baiViet.NgayDang.ToShortDateString()</p>
                                             <p>JAN</p>
                                         </div>
                                     </div>
                                     <div class="post-content">
-                                        <h2 class="post-title">Google inks pact for new 35-storey office</h2>
+                                        <a asp-area="" asp-controller="Home" asp-action="BlogDetail" asp-route-id="@baiViet.BaiVietID">
+                                            <h2 class="post-title">@baiViet.TieuDe</h2>
+                                        </a>
                                         <p class="post-cap">
-                                            That dominion stars lights dominion divide years for
-                                            fourth have don't
-                                            stars is that he earth it first without heaven in place seed it second
-                                            morning saying.
+                                            @baiViet.MoTa
                                         </p>
                                     </div>
                                     <div class="post-footer">
-                                        <i class="post-icon fa fa-user">
+                                        <i class="post-icon none-divide fa fa-list-alt">
                                             <span class="post-icon-txt">
-                                                H.Bao
-                                            </span>
-                                        </i>
-                                        <i class="post-icon fa fa-comment">
-                                            <span class="post-icon-txt">
-                                                03 Comments
+                                                @baiViet.ChuDe.TenChuDe
                                             </span>
                                         </i>
                                     </div>
                                 </li>
-                                <li class="post-item">
-                                    <div class="post-header">
-                                        <img class="img" src="~/images/single_blog_1.png">
-                                        <div class="post-time">
-                                            <p>15</p>
-                                            <p>JAN</p>
-                                        </div>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title">Google inks pact for new 35-storey office</h2>
-                                        <p class="post-cap">
-                                            That dominion stars lights dominion divide years for
-                                            fourth have don't
-                                            stars is that he earth it first without heaven in place seed it second
-                                            morning saying.
-                                        </p>
-                                    </div>
-                                    <div class="post-footer">
-                                        <i class="post-icon fa fa-user">
-                                            <span class="post-icon-txt">
-                                                H.Bao
-                                            </span>
-                                        </i>
-                                        <i class="post-icon fa fa-comment">
-                                            <span class="post-icon-txt">
-                                                03 Comments
-                                            </span>
-                                        </i>
-                                    </div>
-                                </li>
-                                <li class="post-item">
-                                    <div class="post-header">
-                                        <img class="img" src="~/images/single_blog_1.png">
-                                        <div class="post-time">
-                                            <p>15</p>
-                                            <p>JAN</p>
-                                        </div>
-                                    </div>
-                                    <div class="post-content">
-                                        <h2 class="post-title">Google inks pact for new 35-storey office</h2>
-                                        <p class="post-cap">
-                                            That dominion stars lights dominion divide years for
-                                            fourth have don't
-                                            stars is that he earth it first without heaven in place seed it second
-                                            morning saying.
-                                        </p>
-                                    </div>
-                                    <div class="post-footer">
-                                        <i class="post-icon fa fa-user">
-                                            <span class="post-icon-txt">
-                                                H.Bao
-                                            </span>
-                                        </i>
-                                        <i class="post-icon fa fa-comment">
-                                            <span class="post-icon-txt">
-                                                03 Comments
-                                            </span>
-                                        </i>
-                                    </div>
-                                </li>
+                                }
                             </ul>
+                        </div>
+                        <div id="pagination-container">
+                            @Html.PagedListPager((IPagedList)ViewBag.BaiVietToPage, page => Url.Action("Blog", "Home", new { page = page }))
                         </div>
                     </div>
                     <div class="box-col-3">
-
-                        <!--Search Box-->
-                        <div class="sidebar-block">
-                            <div class="block-header">
-                                <h3>Search</h3>
-                            </div>
-                            <div class="block-body">
-                                <div class="search-box">
-                                    <input class="search-inp" placeholder="Search Keyword">
-                                    <i class="search-icon fa fa-search"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End Search Box-->
-                        <!--Category Box-->
-                        <div class="sidebar-block">
-                            <div class="block-header">
-                                <h3>Category</h3>
-                            </div>
-                            <div class="block-body">
-                                <div class="cat-box">
-                                    <ul class="cat-list">
-                                        <li class="cat-item">
-                                            <p>Resaurant food (37)</p>
-                                        </li>
-                                        <li class="cat-item">
-                                            <p>Resaurant food (37)</p>
-                                        </li>
-                                        <li class="cat-item">
-                                            <p>Resaurant food (37)</p>
-                                        </li>
-                                        <li class="cat-item">
-                                            <p>Resaurant food (37)</p>
-                                        </li>
-                                        <li class="cat-item">
-                                            <p>Resaurant food (37)</p>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End Category Box-->
-                        <!--Recent Post-->
-                        <div class="sidebar-block">
-                            <div class="block-header">
-                                <h3>Recent Posts</h3>
-                            </div>
-                            <div class="block-body">
-                                <ul class="block-list">
-                                    <li class="block-item">
-                                        <a>
-                                            <div class="block-box">
-                                                <div class="block-image">
-                                                    <img class="img" src="~/images/post_1.png">
-                                                </div>
-                                                <div class="block-content">
-                                                    <div class="block-content-cover">
-                                                        <h4 class="block-heading">From life was your fish</h4>
-                                                        <p class="block-txt">January 12, 2019</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="block-item">
-                                        <a>
-                                            <div class="block-box">
-                                                <div class="block-image">
-                                                    <img class="img" src="~/images/post_1.png">
-                                                </div>
-                                                <div class="block-content">
-                                                    <div class="block-content-cover">
-                                                        <h4 class="block-heading">From life was your fish</h4>
-                                                        <p class="block-txt">January 12, 2019</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="block-item">
-                                        <a>
-                                            <div class="block-box">
-                                                <div class="block-image">
-                                                    <img class="img" src="~/images/post_1.png">
-                                                </div>
-                                                <div class="block-content">
-                                                    <div class="block-content-cover">
-                                                        <h4 class="block-heading">
-                                                            From life was your fish holy shit
-                                                        </h4>
-                                                        <p class="block-txt">January 12, 2019</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li class="block-item">
-                                        <a>
-                                            <div class="block-box">
-                                                <div class="block-image">
-                                                    <img class="img" src="~/images/post_1.png">
-                                                </div>
-                                                <div class="block-content">
-                                                    <div class="block-content-cover">
-                                                        <h4 class="block-heading">
-                                                            From life was your fish holy shit
-                                                        </h4>
-                                                        <p class="block-txt">January 12, 2019</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--End Recent Post-->
-                        <!--Tags Box-->
-                        <div class="sidebar-block">
-                            <div class="block-header">
-                                <h3>Tags</h3>
-                            </div>
-                            <div class="block-body">
-                                <div class="tag-box">
-                                    <ul class="tag-list">
-                                        <li class="tag-item">
-                                            <a class="tag-link">
-                                                Unity
-                                            </a>
-                                        </li>
-                                        <li class="tag-item">
-                                            <a class="tag-link">
-                                                Technology
-                                            </a>
-                                        </li>
-                                        <li class="tag-item">
-                                            <a class="tag-link">
-                                                Travel
-                                            </a>
-                                        </li>
-                                        <li class="tag-item">
-                                            <a class="tag-link">
-                                                Restaurant
-                                            </a>
-                                        </li>
-                                        <li class="tag-item">
-                                            <a class="tag-link">
-                                                Life style
-                                            </a>
-                                        </li>
-                                        <li class="tag-item">
-                                            <a class="tag-link">
-                                                Illustration
-                                            </a>
-                                        </li>
-                                        <li class="tag-item">
-                                            <a class="tag-link">
-                                                Design
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <!--End Tags Box-->
-
+                        @Html.Partial("_SideBar")
                     </div>
                 </div>
             </div>
