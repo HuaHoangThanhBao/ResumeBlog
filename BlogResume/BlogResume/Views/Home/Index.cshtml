@@ -9,16 +9,12 @@
                 <div class="banner-box">
                     <div class="banner-side">
                         <div class="banner-image-outer">
-                            <img class="img" src="~/images/empolye.webp">
+                            <img class="img" src="./images/empolye.webp">
                         </div>
                     </div>
                     <div class="banner-side">
                         <div class="banner-content">
-                            <h1 class="pad-top-20 c-white">
-                                I'm Hứa Hoàng
-                                <br>
-                                Thanh Bảo
-                            </h1>
+                            <h1 class="pad-top-20 c-white">I'm Hứa Hoàng Thanh Bảo</h1>
                             <p class="pad-top-20">Web Developer at Doslink Group</p>
                         </div>
                     </div>
@@ -37,7 +33,7 @@
                             <div class="box-col-5">
                                 <div class="box-content br-bt-right bx-shadow">
                                     <div class="box-icon">
-                                        <img class="img" src="~/images/services1.svg">
+                                        <img class="img" src="./images/services1.svg">
                                     </div>
                                     <h3 class="box-title">Web Developer</h3>
                                     <p class="box-txt">
@@ -52,7 +48,7 @@
                             <div class="box-col-5">
                                 <div class="box-content br-bt bx-shadow">
                                     <div class="box-icon">
-                                        <img class="img" src="~/images/services3.svg">
+                                        <img class="img" src="./images/services3.svg">
                                     </div>
                                     <h3 class="box-title">Front-end</h3>
                                     <p class="box-txt">
@@ -64,7 +60,7 @@
                             <div class="box-col-5">
                                 <div class="box-content br-right bx-shadow">
                                     <div class="box-icon">
-                                        <img class="img" src="~/images/services4.svg">
+                                        <img class="img" src="./images/services4.svg">
                                     </div>
                                     <h3 class="box-title">Backend</h3>
                                     <p class="box-txt">
@@ -79,7 +75,7 @@
                             <div class="box-col-5">
                                 <div class="box-content bx-shadow">
                                     <div class="box-icon">
-                                        <img class="img" src="~/images/services2.svg">
+                                        <img class="img" src="./images/services2.svg">
                                     </div>
                                     <h3 class="box-title">SEO</h3>
                                     <p class="box-txt">
@@ -375,43 +371,51 @@
                                 <div class="box-navigator">
                                     <h3>Lastest News</h3>
                                     <div class="navigator">
-                                        <button class="prev">
+                                        <button id="prev" class="prev">
                                             <i class="fa fa-arrow-left"></i>
                                         </button>
-                                        <button class="next">
+                                        <button id="next" class="next">
                                             <i class="fa fa-arrow-right"></i>
                                         </button>
                                     </div>
                                 </div>
                                 <div class="news-slide-container">
-                                    <div class="box-col-5">
-                                        <a>
-                                            <div class="news-image-box">
-                                                <img class="img" src="~/images/home-blog1.webp">
-                                                <div class="news-info">
-                                                    <h4 class="time">12 March</h4>
-                                                    <p class="authur">By H.Bao</p>
-                                                    <p class="news-name">
-                                                        The Best SPA Salons For Your Relaxation
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div class="box-col-5">
-                                        <a>
-                                            <div class="news-image-box">
-                                                <img class="img" src="~/images/home-blog1.webp">
-                                                <div class="news-info">
-                                                    <h4 class="time">12 March</h4>
-                                                    <p class="authur">By H.Bao</p>
-                                                    <p class="news-name">
-                                                        The Best SPA Salons For Your Relaxation
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
+                                    <ul class="news-list">
+                                        @{
+                                            int count = 0;
+
+                                            foreach (var baiViet in ViewBag.BaiViets)
+                                            {
+                                                if (count != 5)
+                                                {
+                                                    <li class="news-item fade">
+                                                        <div class="news-box">
+                                                            <div class="box-col-5">
+                                                                <a>
+                                                                    <div class="news-image-box">
+                                                                        <img class="img" src="./images/home-blog1.webp">
+                                                                    </div>
+                                                                </a>
+                                                            </div>
+                                                            <div class="box-col-5">
+                                                                <h3 class="news-heading">
+                                                                    @baiViet.TieuDe
+                                                                </h3>
+                                                                <p class="news-cap">
+                                                                    @baiViet.MoTa
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    count++;
+                                                }
+                                                else
+                                                {
+                                                    break;
+                                                }
+                                            }
+                                        }
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -424,3 +428,6 @@
     </div>
 </main>
 <!--End Main Container-->
+
+
+<script src="~/js/slideShow.js"></script>

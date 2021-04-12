@@ -26,16 +26,14 @@
                     if (count != 5)
                     {
                         <li class="block-item">
-                            <a>
+                            <a asp-area="" asp-controller="Home" asp-action="BlogDetail" asp-route-id="@baiViet.BaiVietID">
                                 <div class="block-box">
                                     <div class="block-image">
                                         <img class="img" src="~/images/post_1.png">
                                     </div>
                                     <div class="block-content">
                                         <div class="block-content-cover">
-                                        <a asp-area="" asp-controller="Home" asp-action="BlogDetail" asp-route-id="@baiViet.BaiVietID">
                                             <h4 class="block-heading">@baiViet.TieuDe</h4>
-                                        </a>
                                             <p class="block-txt">@baiViet.NgayDang.ToShortDateString()</p>
                                         </div>
                                     </div>
