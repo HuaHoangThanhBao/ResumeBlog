@@ -10,7 +10,9 @@ $ git clone ...
 
 #### Set-up
 
-You have to change connectionstring in appsettings.json
+You have to change the connectionstring in appsettings.json.
+
+Then, run two below command lines in Package Manager Console.
 
 ````console
 
