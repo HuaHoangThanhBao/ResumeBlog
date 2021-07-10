@@ -3,10 +3,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/common.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>@ViewData["Title"] - BlogResume</title>
+    <link rel="icon" type="image/png" href="/site-icon.png" sizes="32x32">
+    <title>@ViewData["Title"] - UnioDev</title>
+    <meta name="google-site-verification" content="yvDn9XCFWVHMgsvPHNR2rV8_uLXrwQHQDhs2lgGQPP8" />
 </head>
 <body>
 
@@ -16,15 +17,21 @@
             <ul class="nav__list">
                 <li class="nav__item logo">
                     <a asp-area="" asp-controller="Home" asp-action="Index">
-                        <img class="img" src="~/images/logo.webp">
+                        <img class="img" src="~/images/logo.png">
                     </a>
                 </li>
+                @*<li class="nav__item nav-effect"><a asp-area="" asp-controller="Admin" asp-action="Admin">Admin</a></li>*@
                 <li class="nav__item nav-effect"><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                <li class="nav__item nav-effect"><a asp-area="" asp-controller="Home" asp-action="Work">Work</a></li>
+                <li class="nav__item nav-effect"><a asp-area="" asp-controller="Home" asp-action="Work">Projects</a></li>
                 <li class="nav__item nav-effect"><a asp-area="" asp-controller="Home" asp-action="Blog">Blog</a></li>
                 <li class="nav__item nav-effect"><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
                 <li class="nav__item last-button">
-                    <button class="talk-button">Let's talk</button>
+                    @using (Html.BeginForm("Download", "Home", FormMethod.Post))
+                    {
+
+                        <button class="talk-button" asp-area="" asp-controller="Home" asp-action="Download">Download CV</button>
+
+                    }
                 </li>
                 <li class="nav__item toggle-button">
                     <a id="toggle-button">
@@ -36,14 +43,22 @@
             </ul>
             <div id="sticky-nav" class="sticky-nav">
                 <ul class="sticky-nav__list">
-                    <li class="sticky-nav__item"><a class="sticky-link" 
-                                                    asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li class="sticky-nav__item"><a class="sticky-link" 
-                                                    asp-area="" asp-controller="Home" asp-action="Work">Work</a></li>
-                    <li class="sticky-nav__item"><a class="sticky-link" 
-                                                    asp-area="" asp-controller="Home" asp-action="Blog">Blog</a></li>
-                    <li class="sticky-nav__item"><a class="sticky-link" 
-                                                    asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li class="sticky-nav__item">
+                        <a class="sticky-link"
+                           asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                    </li>
+                    <li class="sticky-nav__item">
+                        <a class="sticky-link"
+                           asp-area="" asp-controller="Home" asp-action="Work">Projects</a>
+                    </li>
+                    <li class="sticky-nav__item">
+                        <a class="sticky-link"
+                           asp-area="" asp-controller="Home" asp-action="Blog">Blog</a>
+                    </li>
+                    <li class="sticky-nav__item">
+                        <a class="sticky-link"
+                           asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -64,25 +79,21 @@
                     <div class="box-cover">
                         <div class="footer-top">
                             <div class="footer-logo">
-                                <img class="img" src="~/images/logo2_footer.webp">
+                                <img class="img" src="~/images/logo-color.png">
                             </div>
                             <div class="footer-content">
                                 <div class="box-col-5">
                                     <p>
-                                        In the mean time shall soon find out the cause of this: What was the epicurus
-                                        towards
-                                        their
-                                        children.
+                                        Contact me anytime or you can download my cv.
                                     </p>
                                 </div>
                                 <div class="box-col-5">
-                                    <a class="call-button">Call me</a>
-                                    <a class="contact-button">Contact</a>
+                                    <a href="tel:0908432264" class="call-button">Call me</a>
+                                    <a asp-area="" asp-controller="Home" asp-action="Download" class="contact-button">Download CV</a>
                                 </div>
                             </div>
                             <div class="footer-social-group">
-                                <a class="social-icon"><i class="fa fa-twitter"></i></a>
-                                <a class="social-icon"><i class="fa fa-facebook"></i></a>
+                                <a class="social-icon" href="https://github.com/HuaHoangThanhBao/" target="_blank"><i class="fa fa-github"></i></a>
                             </div>
                         </div>
                         <div class="footer-bottom">

@@ -29,7 +29,7 @@
                 <div class="box-wrapper">
                     <div class="box-col-7">
                         <div class="post-container">
-                            <ul class="post-list">
+                            @*<ul class="post-list">
 
                                 @foreach (var baiViet in ViewBag.BaiVietToPage)
                                 {
@@ -37,8 +37,8 @@
                                     <div class="post-header">
                                         <img class="img" src="~/images/single_blog_1.png">
                                         <div class="post-time">
-                                            <p>@baiViet.NgayDang.ToShortDateString()</p>
-                                            <p>JAN</p>
+                                            <p>@baiViet.NgayDang.ToString("dd/yyyy")</p>
+                                            <p>@baiViet.NgayDang.ToString("MMMM")</p>
                                         </div>
                                     </div>
                                     <div class="post-content">
@@ -58,14 +58,14 @@
                                     </div>
                                 </li>
                                 }
-                            </ul>
+                            </ul>*@
                         </div>
-                        <div id="pagination-container">
+                        @*<div id="pagination-container">
                             @Html.PagedListPager((IPagedList)ViewBag.BaiVietToPage, page => Url.Action("Blog", "Home", new { page = page }))
-                        </div>
+                        </div>*@
                     </div>
                     <div class="box-col-3">
-                        <partial name="_SideBar" />
+                        @*<partial name="_SideBar" />*@
                     </div>
                 </div>
             </div>

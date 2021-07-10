@@ -1,0 +1,142 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!--Main Container-->
+<main id="main">
+    <div class="main-container container-fluid">
+        <div class="container-wrapper">
+            <section class="box-container">
+                <div class="box-cover">
+
+                    <form method="post" enctype="multipart/form-data" asp-controller="Admin" asp-action="Delete">
+                        <!--Table Container-->
+                        <div class="table-container">
+                            <div class="table-wrapper">
+                                <div class="table-header">
+                                    <div class="table-h-col">
+                                        <h5>Danh sách bài viết</h5>
+                                    </div>
+                                    <div class="table-h-col">
+                                        <p>Tìm kiếm:</p>
+                                        <input placeholder="Tìm kiếm">
+                                    </div>
+                                </div>
+                                <div class="table-area">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Ảnh</th>
+                                                <th>Tiêu đề</th>
+                                                <th>Ngày đăng</th>
+                                                @*<th>Thao tác</th>*@
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @{
+                                                foreach (var baiViet in ViewBag.BaiViets)
+                                                {
+                                                    <tr>
+                                                        <td>@baiViet.BaiVietID</td>
+                                                        <td>
+                                                            <div class="image-box">
+                                                                <div class="image-outline">
+                                                                    <img class="img" src="~/images/@baiViet.HinhAnh">
+                                                                </div>
+                                                            </div>
+                                                        </td>
+                                                        <td>@baiViet.TieuDe</td>
+                                                        <td>@baiViet.NgayDang</td>
+                                                        <td>
+                                                            <div class="btn-group">
+                                                                @*<button class="update @baiViet.BaiVietID"><i class="edit-btn fa fa-edit"></i></button>*@
+                                                                @*<button name="baivietID" value="@baiViet.BaiVietID" class="delete @baiViet.BaiVietID"><i class="delete-btn fa fa-remove"></i></button>*@
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!--End Table Container-->
+                    </form>
+                </div>
+            </section>
+
+
+            <section class="box-container">
+                <div class="box-cover">
+                    <form method="post" enctype="multipart/form-data" asp-controller="Admin" asp-action="Add">
+                        <h2>Hình đại diện cho bài viết</h2>
+                        <br />
+                        <br />
+                        <input type="file" name="hinhanh" />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <label for="tieude">Tiêu đề: </label>
+                        <input name="tieude" />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <select name="idchude">
+                            @{
+                                foreach (var chude in ViewBag.ChuDes)
+                                {
+                                    <option value="@chude.ChuDeID">@chude.TenChuDe</option>
+                                }
+                            }
+                        </select>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <label for="mota">Mô tả: </label>
+                        <input name="mota" />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <textarea id="noidung" name="noidung" placeholder="Nhập mã HTML..."></textarea>
+                        <br />
+                        <br />
+                        <h2>Phần nội dung khi render</h2>
+                        <br />
+                        <br />
+                        <div id="convert"></div>
+                        <br />
+                        <br />
+                        @*<div class="header-title">
+                            <button id="add-btn" class="download-report-btn" type="submit">
+                                <i class="fa fa-plus"></i>
+                                Thêm mới
+                            </button>
+                        </div>*@
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    var content = document.getElementById("noidung");
+    const convert = document.getElementById("convert");
+
+    content.addEventListener('keyup', function () {
+        convert.innerHTML = this.value;
+    });
+
+
+    //const deleteBtnsGroup = document.getElementsByClassName('delete');
+    //for (let i = 0; i < deleteBtnsGroup.length; i++) {
+    //    //console.log(deleteBtnsGroup[i].classList[1]);
+    //}
+</script>

@@ -145,12 +145,14 @@ F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\BlogResume.Raz
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\BlogResume.TagHelpers.input.cache
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\BlogResume.TagHelpers.output.cache
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\BlogResume.RazorCoreGenerate.cache
+F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Admin.cshtml.g.cs
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Home\Blog.cshtml.g.cs
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Home\BlogDetail.cshtml.g.cs
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Home\Work.cshtml.g.cs
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
+F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_AdminLayout.cshtml.g.cs
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MessageForm.cshtml.g.cs
 F:\Du-An\Net\Resume\BlogResume\BlogResume\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_SideBar.cshtml.g.cs
