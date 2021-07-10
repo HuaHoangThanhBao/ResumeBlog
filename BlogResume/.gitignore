@@ -367,3 +367,4 @@ FodyWeavers.xsd
 /Repository/obj/*
 /BlogResume/bin/*
 /BlogResume/obj/*
+/BlogResume/appsettings.json
